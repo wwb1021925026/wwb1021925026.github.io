@@ -29,7 +29,7 @@
                 <li><a href="javascrpit:;">企业采购<i id="xjt"></i></a></li>
                 <li><a href="javascrpit:;"><i id="serve"></i>服务中心<i id="xjt"></i></a></li>
                 <li><a href="javascrpit:;">网站导航<i id="xjt"></i></a></li>
-                <li><a href="javascrpit:;">手机国美<i id="xjt"></i></a></li>
+                <li><a>手机国美<i id="xjt"><span><img src="../images/yi_03.png" alt=""></span></i></a></li>
 
             </ul>
         </div>
@@ -129,12 +129,7 @@
                     <li><a><span>特惠</span>彩电专场爆品导多里杌思</a></li>
                 </ul>
                 <div class="box">
-                    <a><i></i>充话费</a>
-                    <a><i></i>充流量</a>
-                    <a><i></i>领券</a>
-                    <a><i></i>会员</a>
-                    <a><i></i>帮助</a>
-                    <a><i></i>找服务</a>
+                    <img src="../images/li_03.png" alt="">
                 </div>
                 <div>
                     <img src="https://gfs12.gomein.net.cn/T1vVhCBTLT1RCvBVdK.jpg" alt="">
@@ -189,6 +184,16 @@
 <script src="../lib/swiper-bundle.min.js"></script>
 <script src="../js/general.js"></script>
 <script>
+    $(".ulright>li:nth-of-type(6) i").mouseenter(function(){
+        $(".ulright>li:nth-of-type(6) i>span").css({
+            display:"block"
+        })
+    })
+    $(".ulright>li:nth-of-type(6) i").mouseleave(function(){
+        $(".ulright>li:nth-of-type(6) i>span").css({
+            display:"none"
+        })
+    })
     $(".me").text(`Hi ${getCookie("name")}`)
     var tim = new Date();
     var tim1 = new Date("2021/1/5/00:00:00")

@@ -218,6 +218,16 @@ a{
     margin: -1px 3px;
 
 }
+.ulright>li:nth-of-type(6) i{
+    position: relative;
+}
+.ulright>li:nth-of-type(6) i>span{
+    position: absolute;
+    z-index: 9;
+    top: 19px;
+    left: -148px;
+    display: none;
+}
 #tab>div>span>.left{
     position: absolute;
     top: 41px;
@@ -557,6 +567,9 @@ a{
     width: 199px;
     height: 234px;
     float: left;
+}
+#banner-list>.right {
+    background: #fceaea;
 }
 .mian-r>.paging{
     width: 30px;
