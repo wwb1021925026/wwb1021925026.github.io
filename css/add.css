@@ -132,3 +132,17 @@ header>div>p>a{
     color: #888888;
 
 }
+#div{
+    margin-top: 28px;
+    cursor: pointer;
+}
+footer{
+    border-top: 1px solid #dd00a7;
+    height: 292px;
+    background: #f7f7f7;
+    overflow: hidden;
+}
+footer img{
+    margin-top: -2px;
+    cursor: pointer;
+}

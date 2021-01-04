@@ -21,7 +21,7 @@
             <ul class="ulleft">
                 <li><a class="me">国美会员<i id="xjt"></i></a></li>
                 <li><a href="./login.html">登录</a></li>
-                <li><a class="strong" href="./add.html" >注册有礼物</a></li>
+                <li><a class="strong" href="./add.html" >注册有礼物<i></i></a></li>
             </ul>
             <ul class="ulright">
                 <li><a href="javascrpit:;">我的订单</a></li>
@@ -55,7 +55,7 @@
             </ul>
             </div>
             <div id="cat">
-                <a>我的购物车</a>
+                <a>我的购物车<i></i> </a>
             </div>
         </div>
     </header>
@@ -142,13 +142,80 @@
             </div>
         </section>
     </section>
-
+    <section id="seckill" class="container">
+            <div class="le">
+                <p><span><i><img src="https://gfs12.gomein.net.cn/T1ovZvBTbb1RCvBVdK.jpeg" alt=""></i> 美日必抢</span><strong>本场次剩余时间 <span>00</span>:<span>00</span>:<span>00</span>  </strong></p>
+                <ul>
+                    <li>
+                        <span><img src="https://gfs17.gomein.net.cn/T1axW5BXhv1RCvBVdK_400.jpg" alt=""></span>
+                        <p><strong>￥118</strong><span>￥256</span></p>
+                        <strong>云鸿陶瓷 碗碟套装家用景德镇简约</strong>
+                    </li> 
+                    <li>
+                        <span><img src="https://gfs17.gomein.net.cn/T1X9_7BXx_1RCvBVdK_400.jpg" alt=""></span>
+                        <p><strong>¥209</strong><span>¥289</span></p>
+                        <strong>苏泊尔炒锅锅具304不锈钢蜂窝晶</strong>
+                    </li>  
+                    <li>
+                        <span><img src="https://gfs17.gomein.net.cn/T1j3d5BKJv1RCvBVdK_400.jpg" alt=""></span>
+                        <p><strong>¥29.9</strong><span>¥59.8</span></p>
+                        <strong>云鸿陶瓷 碗碟套装18头实惠</strong> 
+                    </li> 
+                    <li>
+                        <span><img src="https://gfs17.gomein.net.cn/T1XbEyBsxv1RCvBVdK_400.jpg" alt=""></span>
+                        <p><strong>¥12.9</strong><span>¥15.9</span></p> 
+                        <strong>洁柔 抽纸黑Face古龙香150抽</strong>
+                    </li> 
+                    
+                </ul>
+            </div>
+            <div class="rig">
+                <img src="https://gfs8.gomein.net.cn/wireless/T180VeBTx_1RCvBVdK_240_252.jpg" alt="">
+            </div>
+    </section>
+    <section id="main">
+        
+    </section>
+    <section id="div" class="container">
+        <img src="../images/foooter_03.png" alt="">
+    </section>
+    <footer>
+        <div class="container">
+            <img src="../images/foooter_06.png" alt="">
+        </div>
+    </footer>
 </body>
 <script src="../lib/jquery.min.js"></script>
 <script src="../lib/swiper-bundle.min.js"></script>
 <script src="../js/general.js"></script>
 <script>
     $(".me").text(`Hi ${getCookie("name")}`)
+    var tim = new Date();
+    var tim1 = new Date("2021/1/5/00:00:00")
+    tim1 = tim1.getTime();
+    tim = tim.getTime();
+    var q = tim1 - tim;
+    q = parseInt(q/1000);
+    console.log(q)
+    setInterval(function(){
+        q--;
+        var hours = parseInt(q/60/60);
+        var min = parseInt((q - hours*60*60)/60);
+        var soc = parseInt(q - hours*60*60 - min*60)
+        if(hours<=9){
+            hours = "0" + hours
+        }
+        if(min<=9){
+            min = "0" + min
+        }
+        if(soc<=9){
+            soc = "0" + soc
+        }
+        $("#seckill>.le>p>strong>span:eq(0)").text(hours);
+        $("#seckill>.le>p>strong>span:eq(1)").text(min);
+        $("#seckill>.le>p>strong>span:eq(2)").text(soc);
+
+    },1000)
     $.ajax({
         url:"../lib/level.json",
         type:"GET",
@@ -196,7 +263,7 @@
                     <div class="mian-r">
 
                     </div>
-                </section>`).appendTo($("body"));
+                </section>`).appendTo($("#main"));
                 $(".main>h1").eq(index).text(item.h);
                 $(".main-l-t>img").eq(index).attr("src",item.imgl);
                 $(".main-l").eq(index).css({

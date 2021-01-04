@@ -4,9 +4,7 @@ a:hover{
 a{
     cursor: pointer;
 }
-body,html{
-    height: 1111111111111px;
-}
+
 .container{
     width: 1200px;
     margin: 0 auto;
@@ -721,4 +719,18 @@ body,html{
 .btt>span:nth-of-type(1):hover{
     background:orange;
     opacity: 0.8;
+}
+#div{
+    margin-top: 28px;
+    cursor: pointer;
+}
+footer{
+    border-top: 1px solid #dd00a7;
+    height: 292px;
+    background: #f7f7f7;
+    overflow: hidden;
+}
+footer img{
+    margin-top: -2px;
+    cursor: pointer;
 }
