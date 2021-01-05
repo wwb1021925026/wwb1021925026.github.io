@@ -196,12 +196,14 @@
     })
     $(".me").text(`Hi ${getCookie("name")}`)
     var tim = new Date();
-    var tim1 = new Date("2021/1/5/00:00:00")
+    var t1 = tim.getFullYear();
+    var t2 = tim.getMonth() + 1;
+    var t3 = tim.getDate() + 1; 
+    var tim1 = new Date(`${t1}/${t2}/${t3}/00:00:00`)
     tim1 = tim1.getTime();
     tim = tim.getTime();
     var q = tim1 - tim;
     q = parseInt(q/1000);
-    console.log(q)
     setInterval(function(){
         q--;
         var hours = parseInt(q/60/60);

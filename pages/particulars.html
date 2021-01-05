@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../lib/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../css/particulars.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/particulars.css">
 </head>
 <body>
     <nav id="nav">
@@ -107,7 +107,7 @@
                 <li><a>荣耀(HONOR)<i></i></a><i></i></li>
                 <li><a>荣耀(honor)</a><i></i></li>
             </ul>
-            <img src="../images/sc_03.png" alt="">
+            <img src="./images/sc_03.png" alt="">
             </div>
         </nav>
         <div class="container">
@@ -142,7 +142,7 @@
                 <div class="price">
                    <i>抢&nbsp;&nbsp;&nbsp;&nbsp;购&nbsp;&nbsp;&nbsp;&nbsp;价</i> <strong>￥1899</strong> <a>降价通知</a> <span></span>
                 </div>
-                <p><i>特&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色</i><img src="../images/tes_03.png" alt=""><img src="../images/tes_05.png" alt=""><img src="../images/tes_07.png" alt=""></p>
+                <p><i>特&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色</i><img src="./images/tes_03.png" alt=""><img src="./images/tes_05.png" alt=""><img src="./images/tes_07.png" alt=""></p>
                 <p><i>送&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至</i><span>深圳市宝安区西乡街道<i></i> </span> <strong>有货</strong> 支持<span>免运费</span></p>
                 <p><i>颜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色</i><span></span></p>
                 <p><i>版&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本</i></p>
@@ -151,17 +151,9 @@
             </section>
         </div>
     </section>
-    <section id="div" class="container">
-        <img src="../images/foooter_03.png" alt="">
-    </section>
-    <footer>
-        <div class="container">
-            <img src="../images/foooter_06.png" alt="">
-        </div>
-    </footer>
 </body>
-<script src="../lib/jquery.min.js"></script>
-<script src="../js/general.js"></script>
+<script src="./lib/jquery.min.js"></script>
+<script src="./js/general.js"></script>
 <script>
     var locationIndex = location.href;
     locationIndex = locationIndex.split("?")[1].split("=")[1];
@@ -169,7 +161,7 @@
         $(".ulleft>li>.me").text(`Hi,${getCookie("name")}`)
     }
     $.ajax({
-        url:"../lib/main.json",
+        url:"./lib/main.json",
         type:"GET",
         dataType:"json",
         success:function(res){
@@ -202,13 +194,18 @@
                 $(".main-r>.price>span").html(`<p>${res[locationIndex].limit[0]}</p>${res[locationIndex].limit[1]}`)
                 $(".main-r>.price>strong>span>p").text(res[locationIndex].limit[1]);
                 $("#p>span>span").text(res[locationIndex].serial)
-                $.each(res[locationIndex].color,function(index,item){
+                if(res[locationIndex].color==""){
+                    $(".main-r>p:nth-of-type(3)").text("")
+                }else{
+                    $.each(res[locationIndex].color,function(index,item){
                     if(res[locationIndex].colorImg==""){
                         $(".main-r>p:nth-of-type(3)>span").append($(`<span>${item}</span>`));
                     }else{
                         $(".main-r>p:nth-of-type(3)>span").append($(`<span><img src=${res[locationIndex].colorImg[index]} alt="">${item}</span>`));
                     }
                 });
+                }
+                
                 if(res[locationIndex].versions!=""){
                     $.each(res[locationIndex].versions,function(index,item){
                     $(".main-r>p:nth-of-type(4)").append($(`<span>${item}</span>`))
@@ -318,7 +315,7 @@
         console.log($(".main-l>.commodity>img").attr("src"));
         var master = getCookie("name");
         $.ajax({
-            url:"../interface/addwq.php",
+            url:"./interface/addwq.php",
             type:"POST",
             dataType:"json",
             data:{
@@ -433,3 +430,5 @@
     
 </script>
 </html>
+
+
