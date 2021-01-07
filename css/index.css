@@ -677,6 +677,7 @@ a{
 #seckill>.le>p>span{
     float: left;
     color: #f5004b;
+    height: 40px;
     font-size: 18px;
     margin-left: 14px;
 }
@@ -684,7 +685,12 @@ a{
     display: inline-block;
     width: 40px;
     height: 40px;
-
+    overflow: hidden;
+}
+#seckill>.le>p>span>span{
+    display: inline-block;
+    height: 40px;
+    overflow: hidden;
 }
 #seckill>.le>p>span>i>img{
     width: 40px;
@@ -700,11 +706,11 @@ a{
     display: inline-block;
     width: 27px;
     height: 27px;
+    line-height: 27px;
     background: #f5004b;
     margin-top: 6px;
     color: #ffffff;
     font-size: 20px;
-    line-height: 27px;
     text-align: center;
     border-radius: 7px;
     margin: 0 2px;

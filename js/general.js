@@ -11,13 +11,11 @@ function getCookie(key){
         }
         
     }
-if(getCookie("name")){
     var oname = location.href;
-    if(oname.indexOf("?")==-1){
-        oname = '我的国美'
-    }else{
-        oname = oname.split("?")[1].toString().split("=")[1];
-    }
+if(!oname){
+
+}else{
+    oname = oname.split("?")[1].toString().split("=")[1];
 }
 
 $(".ulleft>li>.me").text(`Hi,${oname}`)
